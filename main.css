@@ -237,19 +237,7 @@ ul>li {
   flex-direction: column;
   font: 25pt var(--titlesFont);
   transition: width .3s;
-}
-
-.sidebar__menu {
-  position: absolute;
-  left: -400px;
-  transition: left .3s;
-}
-
-.sidebar--opened .sidebar__menu {
-  left: 0;
-  width: 100%;
-  position: relative;
-  transition-delay: .1s;
+  padding: 26px 0 50px 20px;
 }
 
 .sidebar--opened {
@@ -262,10 +250,6 @@ ul>li {
 }
 
 .sidebar--opened .sidebar__close {
-  display: flex;
-}
-
-.sidebar--opened .profile {
   display: flex;
 }
 
@@ -291,6 +275,7 @@ ul>li {
   top: 27px;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 .sidebar__close-icon {
@@ -301,12 +286,29 @@ ul>li {
   height: 54px;
 }
 
+.sidebar__aside {}
+
+.sidebar__menu {
+  position: absolute;
+  display: block;
+  left: -400px;
+  transition: left .3s;
+}
+
+.sidebar--opened .sidebar__menu {
+  left: 0;
+  width: 100%;
+  position: relative;
+  transition-delay: .1s;
+}
+
+
 .sidebar__profile {
   margin: 25px 0 55px 0;
 }
 
 .profile {
-  display: none;
+  display: flex;
   align-items: flex-end;
   margin: 0 0 35px;
 }
@@ -328,7 +330,9 @@ ul>li {
   height: 55px;
 }
 
-.profile__money-count {}
+.profile__money-count {
+  color: goldenrod;
+}
 
 .profile__name {}
 
