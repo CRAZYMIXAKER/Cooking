@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main | Cooking</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
@@ -16,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./main.css" />
   </head>
 
@@ -26,15 +31,32 @@
           <a href="#" class="header__logo">
             <img src="./img/logo.png" alt="logo" class="header__logo-pic" />
           </a>
+
           <div class="header__menu">
+            <div class="header__search">
+              <form class="header__search-form" action="" method="GET">
+                <input
+                  maxlength="35"
+                  type="text"
+                  class="header__search-input"
+                  placeholder="Поиск по названию"
+                />
+                <button class="header__search-button"></button>
+              </form>
+            </div>
+
             <a href="#" class="header__add-recipe"> Добавить рецепт </a>
+
             <a href="#" class="header__sign-up"> Регистрация </a>
             <a href="#" class="header__sign-in"> Вход </a>
           </div>
         </header>
         <div class="main">
           <div class="main__body">
-            <div class="main__title">Рекомендуемые</div>
+            <div class="main__filter">
+              <div class="main__title">Рекомендуемые</div>
+              <div class="main__"></div>
+            </div>
             <div class="main__recipes">
               <div class="recipe">
                 <a href="" class="recipe__link-img">
@@ -1998,8 +2020,19 @@
           </nav>
         </div>
       </aside>
+
+      <div class="scrollup">
+        <i class="fa fa-arrow-up"></i>
+      </div>
     </div>
 
     <script src="./scripts/sidebar-menu.js"></script>
+    <script src="./scripts/scroll.js"></script>
   </body>
 </html>
+<!-- fa fa-chevron-circle-up
+fa fa-arrow-circle-o-up
+fa fa-arrow-up
+fa fa-chevron-up
+fa fa-arrow-circle-up
+-->

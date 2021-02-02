@@ -71,9 +71,6 @@ ul>li {
 .header__logo {
   display: flex;
   margin-left: 149px;
-  /*   position: absolute;top: 50px;
-	margin-left: 200px; */
-  /* padding-right: 1500px; */
 }
 
 .header__logo-pic {
@@ -81,21 +78,81 @@ ul>li {
   height: 125px;
 }
 
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
 .header__menu a {
   font: 23pt var(--titlesFont);
-  text-decoration: none;
 }
+
+.header__search {
+  margin-right: 70px;
+}
+
+.header__search-form {
+  background-color: transparent;
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  height: 42px
+}
+
+.header__search-input {
+  background-color: #F9F0DA;
+  height: 100%;
+  width: 0;
+  padding: 0 42px 0 15px;
+  border: 3px solid rgb(110, 108, 108);
+  border-radius: 25px;
+  outline: none;
+  transition: .4s cubic-bezier(0, 0.8, 0, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header__search-input:focus {
+  width: 300px;
+  border-color: tomato;
+}
+
+.header__search-button {
+  background: #683B4D;
+  border: none;
+  height: 47px;
+  width: 47px;
+  border-radius: 25px;
+  position: absolute;
+  outline: none;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.header__search-button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+
 
 
 .header__add-recipe {
   margin-right: 90px;
-  width: 214px;
-  height: 50px;
   border: 4px solid #EC6060;
   border-radius: 10px;
   padding: 15px 35px;
   color: #EC6060;
+  /* #ff5757 */
   background: #fff;
+}
+
+.header__add-recipe:hover {
+  color: #fff;
+  background: #EC6060;
 }
 
 .header__sign-up {
@@ -404,6 +461,28 @@ ul>li {
 
 .sidebar__menu-link {
   text-transform: uppercase;
+}
+
+.scrollup {
+  position: fixed;
+  color: #ff5757;
+  /* background-color: #286090; */
+  right: 70px;
+  bottom: 70px;
+  padding: 12px 15px;
+  font-size: 30px;
+  border-radius: 90px;
+  border: 5px #ff5757 solid;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+}
+
+.scrollup:hover {
+  background-color: #ff5757;
+  /* 286090 */
+  color: #fff;
+
 }
 
 /*
