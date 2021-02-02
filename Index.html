@@ -31,7 +31,6 @@
           <a href="#" class="header__logo">
             <img src="./img/logo.png" alt="logo" class="header__logo-pic" />
           </a>
-
           <div class="header__menu">
             <div class="header__search">
               <form class="header__search-form" action="" method="GET">
@@ -44,9 +43,7 @@
                 <button class="header__search-button"></button>
               </form>
             </div>
-
             <a href="#" class="header__add-recipe"> Добавить рецепт </a>
-
             <a href="#" class="header__sign-up"> Регистрация </a>
             <a href="#" class="header__sign-in"> Вход </a>
           </div>
@@ -54,8 +51,30 @@
         <div class="main">
           <div class="main__body">
             <div class="main__filter">
-              <div class="main__title">Рекомендуемые</div>
-              <div class="main__"></div>
+              <div class="main__filter-title">Рекомендуемые</div>
+              <div class="main__filter-list">
+                <div class="main__filter-text">Сортировать:</div>
+                <div class="main__filter-desc">Новые</div>
+                <div class="filter">
+                  <div class="filter__drop-box">
+                    <div class="filter__item">
+                      <a href="#" class="filter__item-link">Новые</a>
+                    </div>
+                    <div class="filter__item">
+                      <a href="#" class="filter__item-link">Рекомендуемые</a>
+                    </div>
+                    <div class="filter__item">
+                      <a href="#" class="filter__item-link">Старые</a>
+                    </div>
+                    <div class="filter__item">
+                      <a href="#" class="filter__item-link">Популярные</a>
+                    </div>
+                    <div class="filter__item">
+                      <a href="#" class="filter__item-link">Пользовательские</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="main__recipes">
               <div class="recipe">
@@ -2030,9 +2049,23 @@
     <script src="./scripts/scroll.js"></script>
   </body>
 </html>
-<!-- fa fa-chevron-circle-up
-fa fa-arrow-circle-o-up
-fa fa-arrow-up
-fa fa-chevron-up
-fa fa-arrow-circle-up
--->
+<!-- .scrollup {
+  position: fixed;
+  color: #ff5757;
+  /* background-color: #286090; */
+  right: 70px;
+  bottom: 70px;
+  padding: 12px 15px;
+  font-size: 30px;
+  border-radius: 90px;
+  border: 5px #ff5757 solid;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+}
+
+.scrollup:hover {
+  background-color: #ff5757;
+  /* 286090 */
+  color: #fff;
+} -->

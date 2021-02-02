@@ -104,7 +104,7 @@ ul>li {
   height: 100%;
   width: 0;
   padding: 0 42px 0 15px;
-  border: 3px solid rgb(110, 108, 108);
+  border: 3px solid #683B4D;
   border-radius: 25px;
   outline: none;
   transition: .4s cubic-bezier(0, 0.8, 0, 1);
@@ -115,14 +115,18 @@ ul>li {
 
 .header__search-input:focus {
   width: 300px;
-  border-color: tomato;
+}
+
+.header__search-input:hover {
+  border-color: rgb(77, 255, 71);
+  /* tomato */
 }
 
 .header__search-button {
   background: #683B4D;
   border: none;
-  height: 47px;
-  width: 47px;
+  height: 48px;
+  width: 48px;
   border-radius: 25px;
   position: absolute;
   outline: none;
@@ -174,13 +178,74 @@ ul>li {
   margin: 30px 50px;
 }
 
-.main__title {
+.main__filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.main__filter-title {
   font: 30px / 1.42 "Roboto",
     Arial,
     sans-serif;
   color: #707070;
-  margin-bottom: 38px;
 }
+
+.main__filter-list {
+  position: relative;
+  display: flex;
+}
+
+.main__filter-text {
+  margin-right: 5px;
+}
+
+.main__filter-desc {
+  margin-right: 5px;
+}
+
+.filter {
+  display: block;
+}
+
+.filter::before {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #000000;
+}
+
+.filter:hover::before {
+  /* transform: scaleY(-1);
+  top: .3em; */
+  content: "\f078";
+  transition: .5s;
+  color: #b42222;
+}
+
+.filter:hover .filter__drop-box {
+  opacity: 1;
+  top: 17px;
+  right: -20px;
+}
+
+.filter__drop-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  top: -999999em;
+  opacity: 0;
+  transition: .5s opacity;
+}
+
+.filter__item {
+  padding: 10px;
+  background: white;
+}
+
+.filter__item-link {}
 
 .main__recipes {
   display: flex;
@@ -482,7 +547,6 @@ ul>li {
   background-color: #ff5757;
   /* 286090 */
   color: #fff;
-
 }
 
 /*
