@@ -195,13 +195,17 @@ ul>li {
 .main__filter-list {
   position: relative;
   display: flex;
+  align-items: center;
 }
 
 .main__filter-text {
+  font-size: 22px;
   margin-right: 5px;
 }
 
 .main__filter-desc {
+  font-size: 20px;
+  font-weight: bold;
   margin-right: 5px;
 }
 
@@ -212,15 +216,13 @@ ul>li {
 .filter::before {
   content: "\f077";
   font-family: FontAwesome;
-  font-size: 16px;
+  font-size: 20px;
   color: #000000;
+  transition: .5s;
 }
 
 .filter:hover::before {
-  /* transform: scaleY(-1);
-  top: .3em; */
   content: "\f078";
-  transition: .5s;
   color: #b42222;
 }
 
@@ -228,6 +230,7 @@ ul>li {
   opacity: 1;
   top: 17px;
   right: -20px;
+  transition: 1s opacity;
 }
 
 .filter__drop-box {
@@ -237,15 +240,40 @@ ul>li {
   padding: 10px 5px;
   top: -999999em;
   opacity: 0;
-  transition: .5s opacity;
 }
 
 .filter__item {
-  padding: 10px;
+  position: relative;
+  padding: 15px 35px;
   background: white;
 }
 
-.filter__item-link {}
+.filter__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 2px;
+  right: 10%;
+  background: #707070;
+}
+
+.filter__item:last-child::after {
+  height: 0;
+}
+
+.filter__item:hover {
+  background: whitesmoke;
+}
+
+.filter__item:focus {
+  color: lightcoral;
+  background-color: lightgreen;
+}
+
+.filter__item:last-child {
+  border-bottom: 2px solid white;
+}
 
 .main__recipes {
   display: flex;
