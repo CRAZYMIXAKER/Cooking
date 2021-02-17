@@ -34,8 +34,8 @@
 						</form>
 					</div>
 					<a href="#" class="header__add-recipe"> Добавить рецепт </a>
-					<a href="registration.html" class="header__sign-up"> Регистрация </a>
-					<a href="autorization.html" class="header__sign-in"> Вход </a>
+					<a href="sign-in-up.html?status=up" class="header__sign-up"> Регистрация </a>
+					<a href="sign-in-up.html?status=in" class="header__sign-in"> Вход </a>
 				</div>
 			</header>
 			<div class="main">

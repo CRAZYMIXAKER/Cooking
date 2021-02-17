@@ -16,7 +16,10 @@
   --brown: #683B4D;
   --white: #fff;
   /* #F2F0F0 F9F0DA*/
-  /* #707070 gray */
+  --gray: whitesmoke;
+  /*fffefe*/
+  --green: #59ff2f;
+
   --titlesFont: 'Yanone Kaffeesatz', Arial, sans-serif;
 }
 
