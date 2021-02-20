@@ -3,16 +3,24 @@ const autorization = document.querySelector(".main__title-autorization");
 const signUp = document.querySelector(".form__sign-up");
 const signIn = document.querySelector(".form__sign-in");
 
-registration.addEventListener("click", function () {
+registration.addEventListener("click", SignUp);
+autorization.addEventListener("click", SignIn);
+
+function SignUp() {
   registration.classList.add("main__title--background");
   autorization.classList.remove("main__title--background");
   signUp.classList.add("form__sign--opened");
   signIn.classList.remove("form__sign--opened");
-});
+}
 
-autorization.addEventListener("click", function () {
+function SignIn() {
   autorization.classList.add("main__title--background");
   registration.classList.remove("main__title--background");
   signIn.classList.add("form__sign--opened");
   signUp.classList.remove("form__sign--opened");
-});
+}
+
+// $.getJSON("sign-in-up.php", { status: 12 }, function (e) {
+//   alert("Result from PHP: " + e.result);
+// });
+// fetch("sign-in-up.php", { method: "GET", body: df });
