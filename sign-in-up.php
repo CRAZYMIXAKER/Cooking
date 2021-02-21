@@ -18,11 +18,6 @@ include_once('functions.php');
 </head>
 
 <body>
-	<h2>
-		<? if(isset($_SESSION['Message'])){echo $_SESSION['Message'];unset($_SESSION['Message']);}
-		elseif (isset($_SESSION['Error'])){echo $_SESSION['Error'];unset($_SESSION['Error']);}
-		?>
-	</h2>
 	<div class="main">
 		<div class="main__title">
 			<a class="main__title-registration">Регистрация</a>
@@ -42,9 +37,9 @@ include_once('functions.php');
 						<label class="form__sign-label">Фамилия</label>
 					</div>
 					<div class="form__sign-item">
-						<input class="form__sign-input" type="text" name="image" required />
+						<input class="form__sign-input" type="text" name="email" required />
 						<span class="form__sign-bar"></span>
-						<label class="form__sign-label">Аватарка</label>
+						<label class="form__sign-label">Почта</label>
 					</div>
 					<div class="form__sign-item">
 						<input class="form__sign-input" type="text" name="login" required />
@@ -76,7 +71,7 @@ include_once('functions.php');
 						<span class="form__sign-bar"></span>
 						<label class="form__sign-label">Пароль</label>
 					</div>
-					<button class="form__sign-button" name="button_sign-in">Регистрация</button>
+					<button class="form__sign-button" name="button_sign-in">Вход</button>
 				</form>
 				<div class="form__question-sign">
 					<div class="form__question-text">У вас нет аккаунта?</div>
@@ -85,12 +80,18 @@ include_once('functions.php');
 			</div>
 		</div>
 	</div>
+	<? if (isset($_SESSION['Error'])){echo "<h2>".$_SESSION['Error']."</h2>"; unset($_SESSION['Error']);}?>
 
 	<!-- <div class="mouse"></div> -->
 
 	<!-- <script src="./scripts/sign-in-up.js"></script> -->
 	<script type="text/javascript">
 	var status = <?php echo json_encode($_GET['status']) ?>;
+	if (typeof status != undefined) {
+		console.log('YEST');
+	} else {
+		console.log('NULL');
+	}
 
 	const registration = document.querySelector(".main__title-registration");
 	const autorization = document.querySelector(".main__title-autorization");

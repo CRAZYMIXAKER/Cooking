@@ -1,4 +1,5 @@
-<?php require 'databaseconnect.php'; ?>
+<?php session_start();
+require 'databaseconnect.php'; ?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -92,75 +93,8 @@
 								</ul>
 							</div>
 						</div>
-						<div class="recipe">
-							<a href="" class="recipe__link-img">
-								<img src="./img/Recipe/8.jpg" alt="Рецепт" class="recipe__img" />
-							</a>
-							<div class="recipe__link-name">
-								Тыквенный рулет из шифонового бисквита Тыквенный рулет из
-								шифонового бисквита
-							</div>
-							<a class="recipe__link-author">
-								<img src="./img/profile.png" alt="Автор" class="recipe__img-author" />
-								<div class="recipe__name-author">Mark Willium</div>
-							</a>
-							<div class="recipe__desc">
-								<ul class="desc">
-									<li class="desc__item">
-										<img src="./img/icons8-heart-208.png" alt="Количество лайков рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">222</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-star-96.png" alt="Количество добавлений рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">12</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-delete-message-52.png" alt="Количество сообщений рецепта"
-											class="desc__item-icon" />
-										<div class="desc__item-title">4</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-eye-96.png" alt="Количество просмотров рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">210</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="recipe">
-							<a href="" class="recipe__link-img">
-								<img src="./img/Recipe/9.jpg" alt="Рецепт" class="recipe__img" />
-							</a>
-							<div class="recipe__link-name">
-								Тыквенный рулет из шифонового бисквита Тыквенный рулет из
-								шифонового бисквита
-							</div>
-							<a class="recipe__link-author">
-								<img src="./img/profile.png" alt="Автор" class="recipe__img-author" />
-								<div class="recipe__name-author">Mark Willium</div>
-							</a>
-							<div class="recipe__desc">
-								<ul class="desc">
-									<li class="desc__item">
-										<img src="./img/icons8-heart-208.png" alt="Количество лайков рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">222</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-star-96.png" alt="Количество добавлений рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">12</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-delete-message-52.png" alt="Количество сообщений рецепта"
-											class="desc__item-icon" />
-										<div class="desc__item-title">4</div>
-									</li>
-									<li class="desc__item">
-										<img src="./img/icons8-eye-96.png" alt="Количество просмотров рецепта" class="desc__item-icon" />
-										<div class="desc__item-title">210</div>
-									</li>
-								</ul>
-							</div>
-						</div>
 					</div>
+					<? if (isset($_SESSION['Message'])){echo "<h2>".$_SESSION['Message']."</h2>"; unset($_SESSION['Message']);}?>
 				</div>
 			</div>
 			<div>
