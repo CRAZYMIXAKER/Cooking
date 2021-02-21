@@ -19,8 +19,3 @@ function SignIn() {
   signIn.classList.add("form__sign--opened");
   signUp.classList.remove("form__sign--opened");
 }
-
-// $.getJSON("sign-in-up.php", { status: 12 }, function (e) {
-//   alert("Result from PHP: " + e.result);
-// });
-// fetch("sign-in-up.php", { method: "GET", body: df });

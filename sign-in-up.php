@@ -56,7 +56,7 @@ include_once('functions.php');
 						<span class="form__sign-bar"></span>
 						<label class="form__sign-label">Пароль</label>
 					</div>
-					<button class="form__sign-button">Регистрация</button>
+					<button class="form__sign-button" name="button_sign-up">Регистрация</button>
 				</form>
 				<div class="form__question-sign">
 					<div class="form__question-text">Уже зарегистрированы?</div>
@@ -76,7 +76,7 @@ include_once('functions.php');
 						<span class="form__sign-bar"></span>
 						<label class="form__sign-label">Пароль</label>
 					</div>
-					<button class="form__sign-button">Регистрация</button>
+					<button class="form__sign-button" name="button_sign-in">Регистрация</button>
 				</form>
 				<div class="form__question-sign">
 					<div class="form__question-text">У вас нет аккаунта?</div>
