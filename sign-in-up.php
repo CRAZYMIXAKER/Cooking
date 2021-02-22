@@ -87,11 +87,6 @@ include_once('functions.php');
 	<!-- <script src="./scripts/sign-in-up.js"></script> -->
 	<script type="text/javascript">
 	var status = <?php echo json_encode($_GET['status']) ?>;
-	if (typeof status != undefined) {
-		console.log('YEST');
-	} else {
-		console.log('NULL');
-	}
 
 	const registration = document.querySelector(".main__title-registration");
 	const autorization = document.querySelector(".main__title-autorization");

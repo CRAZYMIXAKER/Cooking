@@ -94,22 +94,23 @@ require 'databaseconnect.php'; ?>
 							</div>
 						</div>
 					</div>
-					<? if (isset($_SESSION['Message'])){echo "<h2>".$_SESSION['Message']."</h2>"; unset($_SESSION['Message']);}?>
+					<? if (isset($_SESSION['Message'])){echo "<h2>".$_SESSION['User']['Name'].", ".$_SESSION['Message']."</h2>"; unset($_SESSION['Message']);}
+					if(isset($_SESSION['User'])){if(!empty($_SESSION['User']['IDUser'])){print_r($_SESSION['User']);}}?>
 				</div>
 			</div>
 			<div>
 				<?php
-				$sql = "select * from Users";
-				// $query = $connect->prepare($sql);
-				// $query->execute();
-				$query = $connect->query($sql);
-				$Users = $query->fetchAll(\PDO::FETCH_ASSOC);
-				$sss = print_r($Users);
-				echo '<p>' . $sss . '</p>';
+				// $sql = "select * from Users";
+				// // $query = $connect->prepare($sql);
+				// // $query->execute();
+				// $query = $connect->query($sql);
+				// $Users = $query->fetchAll(\PDO::FETCH_ASSOC);
+				// $sss = print_r($Users);
+				// echo '<p>' . $sss . '</p>';
 
-				foreach ($Users as $User) {
-					echo '<p>' . $User['Name'] . '</p>';
-				}
+				// foreach ($Users as $User) {
+				// 	echo '<p>' . $User['Name'] . '</p>';
+				// }
 				?>
 			</div>
 		</section>
