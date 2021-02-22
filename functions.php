@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$login = $_POST['login'];
 				$password = md5(md5($_POST['password']));
 
-				// $query = $connect->query($sql);
-				// $checkLogin = $query->fetch();$sql = "SELECT * FROM Users WHERE Login = '$login'";
 				$sql = "SELECT * FROM Users WHERE Login = '$login'";
-				$prepare = $connect->prepare($sql);
-				$prepare->execute();
-				$checkLogin = $prepare->fetchall();
+				$query = $connect->query($sql);
+				$checkLogin = $query->fetchAll();
+				// $prepare = $connect->prepare($sql);
+				// $prepare->execute();
+				// $checkLogin = $prepare->fetchall();
 
 				if (count($checkLogin) == 0) {
 					$sql = "INSERT Users (Name, Surname, Email, Avatar, Login, Password) 
@@ -58,13 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$login = $_POST['sign_in-login'];
 				$password = md5(md5($_POST['sign_in-password']));
 
-				// $sql = "SELECT * FROM Users WHERE Login = '$login'";
-				// $query = $connect->query($sql);
-				// $checkUser = $query->fetchAll();
+
 				$sql = "SELECT * FROM Users WHERE Login = '$login' and Password = '$password'";
-				$prepare = $connect->prepare($sql);
-				$prepare->execute();
-				$checkUser = $prepare->fetchAll();
+				$query = $connect->query($sql);
+				$checkUser = $query->fetchAll();
+				// $prepare = $connect->prepare($sql);
+				// $prepare->execute();
+				// $checkUser = $prepare->fetchAll();
 
 				if (count($checkUser) == 1) {
 					$sql = "SELECT * FROM Users WHERE Login = '$login'";
@@ -80,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						"Login" => $user['Login'],
 						"Block" => $user['Block']
 					];
+
+					// print_r($user);
 					$_SESSION['Message'] = 'Вы авторизовались успешно';
 					header('Location: index.php');
 				} else {
