@@ -6,7 +6,8 @@
 }
 
 :root {
-  --yellow: #ffc92f;
+  --yellow: #f6d365;
+  /*ffc92f*/
   --red: #ff5757;
   /* #EC6060 */
   --black: #232323;
@@ -576,7 +577,7 @@ ul>li {
 
 
 .sidebar__profile {
-  margin: 25px 0 55px 0;
+  margin-top: 25px;
 }
 
 .profile {
@@ -683,7 +684,9 @@ ul>li {
   width: 0;
 }
 
-.sidebar__menu {}
+.sidebar__menu {
+  margin-top: 55px;
+}
 
 .sidebar__menu-list {}
 

@@ -6,7 +6,8 @@
 }
 
 :root {
-  --yellow: #ffc92f;
+  --yellow: #f6d365;
+  /*ffc92f*/
   --red: #ff5757;
   /* #EC6060 */
   --black: #232323;
@@ -219,6 +220,46 @@ body {
 .form__sign--opened {
   display: block;
 }
+
+.back {
+  position: fixed;
+  color: var(--red);
+  left: 70px;
+  top: 70px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.back__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: var(--white);
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  color: var(--white);
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+}
+
+.back__link:hover::before {
+  padding: 0 20px 5px 0;
+  content: "\f060";
+  font-family: FontAwesome;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.back__link:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+}
+
 
 
 

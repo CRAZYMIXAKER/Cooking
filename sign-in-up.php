@@ -27,12 +27,12 @@ include_once('functions.php');
 			<div class="form__sign-up">
 				<form class="form__sign" method="POST" action="./functions.php">
 					<div class="form__sign-item">
-						<input class="form__sign-input" type="text" name="name" required />
+						<input class="form__sign-input" type="text" name="name" maxlength="12" required />
 						<span class="form__sign-bar"></span>
 						<label class="form__sign-label">Имя</label>
 					</div>
 					<div class="form__sign-item">
-						<input class="form__sign-input" type="text" name="surname" required />
+						<input class="form__sign-input" type="text" name="surname" maxlength="12" required />
 						<span class="form__sign-bar"></span>
 						<label class="form__sign-label">Фамилия</label>
 					</div>
@@ -79,6 +79,10 @@ include_once('functions.php');
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="back">
+		<a href="index.php" class="back__link">На главную</a>
 	</div>
 	<? if (isset($_SESSION['Error'])){echo "<h2>".$_SESSION['Error']."</h2>"; unset($_SESSION['Error']);}?>
 

@@ -26,17 +26,18 @@ CREATE TABLE Recipes
 (
 	IDRecipe INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	Id_User INT NOT NULL,
-    Id_TypeRecipe INT NOT NULL,
-    NameRecipe varchar(50) NOT NULL,
-    Author varchar(40),
-    Likes INT NOT NULL,
-    Comments INT NOT NULL,
-    Favorites INT NOT NULL,
-    Views INT NOT NULL,
-    Times INT NOT NULL,
-    
-    FOREIGN KEY (Id_User) REFERENCES Users (IDUser),
-    FOREIGN KEY (Id_TypeRecipe) REFERENCES TypeRecipe (IDTypeRecipe)
+  Id_TypeRecipe INT NOT NULL,
+  NameRecipe varchar(50) NOT NULL,
+	Image varchar(500) NOT NULL,
+  Author varchar(40),
+	Likes INT NOT NULL,
+  Comments INT NOT NULL,
+  Favorites INT NOT NULL,
+  Views INT NOT NULL,
+  Times INT NOT NULL,
+
+  FOREIGN KEY (Id_User) REFERENCES Users (IDUser),
+  FOREIGN KEY (Id_TypeRecipe) REFERENCES TypeRecipe (IDTypeRecipe)
 );
 
 CREATE TABLE ProgressionSteps
@@ -64,7 +65,7 @@ CREATE TABLE Comments
 CREATE TABLE Products
 (
 	IDProduct INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    Name varchar(30) NOT NULL
+    NameProduct varchar(30) NOT NULL
 );
 
 CREATE TABLE Ingredients
@@ -102,10 +103,21 @@ VALUES
 ('Выпечка');
 
 INSERT Recipes
-(Id_User, Id_TypeRecipe, NameRecipe, Author, Likes, Comments, Favorites, Views, Times)
+(Id_User, Id_TypeRecipe, NameRecipe, Image, Author, Likes, Comments, Favorites, Views, Times)
 VALUES
-(1, 1, 'Тыквенный рулет из шифонового бисквита', 'Nail Gail', 25, 4, 5, 130, 320),
-(2, 2, 'Тальятелле в томатном соусе с креветками', 'Noname Noname', 32, 15, 2, 653, 120);
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(1, 1, 'Тыквенный рулет из шифонового бисквита', 'ImageRecipe1', 'Nail Gail', 25, 4, 5, 130, 320),
+(2, 2, 'Тальятелле в томатном соусе с креветками', 'ImageRecipe2', 'Noname Noname', 32, 15, 2, 653, 120);
 
 INSERT ProgressionSteps
 (Id_Recipe, Text, Picture, Nomber)
@@ -124,7 +136,7 @@ VALUES
 (2, 1, 'asyz');
 
 INSERT Products
-(Name)
+(NameProduct)
 VALUES
 ('Onion'),
 ('Potatoe'),

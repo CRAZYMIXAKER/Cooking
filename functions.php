@@ -17,9 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$sql = "SELECT * FROM Users WHERE Login = '$login'";
 				$query = $connect->query($sql);
 				$checkLogin = $query->fetchAll();
-				// $prepare = $connect->prepare($sql);
-				// $prepare->execute();
-				// $checkLogin = $prepare->fetchall();
 
 				if (count($checkLogin) == 0) {
 					$sql = "INSERT Users (Name, Surname, Email, Avatar, Login, Password) 
@@ -27,20 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					$prepare = $connect->prepare($sql);
 					$prepare->execute();
 
-					$sql = "SELECT * FROM Users WHERE Login = '$login'";
-					$prepare = $connect->prepare($sql);
-					$prepare->execute();
-					$user = $prepare->fetch();
-					$_SESSION['User'] = [
-						"IDUser" => $user['IDUser'],
-						"Name" => $user['Name'],
-						"Surname" => $user['Surname'],
-						"Email" => $user['Email'],
-						"Avatar" => $user['Avatar'],
-						"Login" => $user['Login'],
-						"Block" => $user['Block']
-					];
-
+					logIn($connect, $login);
 					$_SESSION['Message'] = 'Регистрация прошла успешно';
 					header('Location: index.php');
 				} else {
@@ -58,30 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$login = $_POST['sign_in-login'];
 				$password = md5(md5($_POST['sign_in-password']));
 
-
 				$sql = "SELECT * FROM Users WHERE Login = '$login' and Password = '$password'";
 				$query = $connect->query($sql);
 				$checkUser = $query->fetchAll();
-				// $prepare = $connect->prepare($sql);
-				// $prepare->execute();
-				// $checkUser = $prepare->fetchAll();
 
 				if (count($checkUser) == 1) {
-					$sql = "SELECT * FROM Users WHERE Login = '$login'";
-					$prepare = $connect->prepare($sql);
-					$prepare->execute();
-					$user = $prepare->fetch();
-					$_SESSION['User'] = [
-						"IDUser" => $user['IDUser'],
-						"Name" => $user['Name'],
-						"Surname" => $user['Surname'],
-						"Email" => $user['Email'],
-						"Avatar" => $user['Avatar'],
-						"Login" => $user['Login'],
-						"Block" => $user['Block']
-					];
-
-					// print_r($user);
+					logIn($connect, $login);
 					$_SESSION['Message'] = 'Вы авторизовались успешно';
 					header('Location: index.php');
 				} else {
@@ -94,9 +60,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			}
 		}
 	}
-	// header('Location: sign-in-up.php?status=in');
-	// $_GET['Message'] = 'POSTP';
 }
+
+function logIn($connect, $login)
+{
+	$sql = "SELECT * FROM Users WHERE Login = '$login'";
+	$prepare = $connect->prepare($sql);
+	$prepare->execute();
+	$user = $prepare->fetch();
+	$_SESSION['User'] = [
+		"IDUser" => $user['IDUser'],
+		"Name" => $user['Name'],
+		"Surname" => $user['Surname'],
+		"Email" => $user['Email'],
+		"Avatar" => $user['Avatar'],
+		"Login" => $user['Login'],
+		"Block" => $user['Block']
+	];
+}
+
+
 // echo $_SERVER['REQUEST_METHOD'];
 // echo '<br/>';
 // echo $_GET['status'];
@@ -119,3 +102,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // function signInUp()
 // {
 // }
+
+// for ($i = 0 ; $i < count($countRecipes) ; ++$i):
+// 	{
+// 		echo print_r($Recipes[$i])."</br></br>";
+		
+// 		$Image = $Recipes[$i]['Image'];
+// 		$NameRecipe = $Recipes[$i]['NameRecipe'];
+// 		$Avatar = $Recipes[$i]['Avatar'];
+// 		$Name = $Recipes[$i]['Name'];
+// 		$Likes = $Recipes[$i]['Likes'];
+// 		$Favorites = $Recipes[$i]['Favorites'];
+// 		$Comments = $Recipes[$i]['Comments'];
+// 		$Views = $Recipes[$i]['Views'];
+// 		echo $Image . "</br>" . $NameRecipe . "</br>" . 
+// 				 $Avatar . "</br>" . $Name . "</br>" . 
+// 				 $Likes . "</br>" . $Favorites . "</br>" . 
+// 				 $Comments . "</br>" . $Views . "</br></br>";
+// 		echo "</br></br></br>";
+	}
